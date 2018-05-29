@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Http\Request;
+use App\Http\Requests;
 
 use App\Tasklist;
 
@@ -17,7 +17,7 @@ class TasklistsController extends Controller
      */
     public function index()
     {
-        $messages = Tasklist::all();
+        $tasklists = Tasklist::all();
         
         return view('tasklists.index',[
             'tasklists' => $tasklists,
@@ -35,7 +35,7 @@ class TasklistsController extends Controller
         $tasklist = new Tasklist;
         
         return view('tasklists.create',[
-            'tasjkust' => $tasklist,
+            'tasklist' => $tasklist,
             ]);
         //
     }
@@ -98,7 +98,7 @@ class TasklistsController extends Controller
     public function update(Request $request, $id)
     {
         $tasklist = Tasklist::find($id);
-        $tasklist->content = $tasklist->content;
+        $tasklist->content = $request->content;
         $tasklist->save();
         
         return redirect('/');
