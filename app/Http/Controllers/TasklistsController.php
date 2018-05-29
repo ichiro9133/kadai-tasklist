@@ -32,6 +32,11 @@ class TasklistsController extends Controller
      */
     public function create()
     {
+        $tasklist = new Tasklist;
+        
+        return view('tasklists.create',[
+            'tasjkust' => $tasklist,
+            ]);
         //
     }
 
