@@ -3,7 +3,9 @@
 @section('content')
 
     <h1>id = {{$tasklist->id}}</h1>
-    <p>{{$tasklist->content}}</p>
+    
+    <p>状況{{$tasklist->status}}</p>
+    <p>タスクリスト{{$tasklist->content}}</p>
     
 <!-- Write content for each page here -->
 
