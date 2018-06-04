@@ -9,15 +9,15 @@
     {!! Form::model($tasklist, ['route' => ['tasklists.update', $tasklist->id], 'method' => 'put']) !!}
         <div class="form-group">
             {!! Form::label('status', '状況:') !!}
-            {!! Form::text('status') !!}
+            {!! Form::text('status',null,['class' => 'form-control']) !!}
         </div>
 
         <div class="form-group">
             {!! Form::label('content', 'タスクリスト:') !!}
-            {!! Form::text('content') !!}
+            {!! Form::text('content', null, ['class' =>'form-control']) !!}
         </div>
         
-        {!! Form::submit('更新') !!}
+        {!! Form::submit('更新',['class'=> 'btn btn-default']) !!}
 
     {!! Form::close() !!}
     </div>
