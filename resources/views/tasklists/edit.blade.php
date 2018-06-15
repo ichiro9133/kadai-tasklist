@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+@if (Auth::id() == $tasklist->user_id)
 
     <h1>id: {{ $tasklist->id }} のタスクリスト編集ページ</h1>
 
@@ -20,7 +21,12 @@
         {!! Form::submit('更新',['class'=> 'btn btn-default']) !!}
 
     {!! Form::close() !!}
+    @else
+    {!! redirect('/'); !!}
+    
+    @endif
     </div>
 </div>
 
 @endsection
+
